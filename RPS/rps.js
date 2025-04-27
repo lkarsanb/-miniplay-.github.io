@@ -207,7 +207,6 @@ function getResult() {
     computerPoint = 0;
     userPointDisplay.innerHTML = String(userPoint);
     computerPointDisplay.innerHTML = String(computerPoint);
-    userScore.innerHTML = String(score);
     }, 3000); // Show after 3 seconds
   }
 }
