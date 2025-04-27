@@ -41,18 +41,6 @@
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
-            //Check that the username is unique.
-            const { data } = await supabase
-                .from('Leaderboard')
-                .select('username');
-        
-            for (let i = 0; i < data.length; i++) {
-                if (username == data[i].username) {
-                    alert("Username exists.");
-                    return;
-                }
-            }
-
             async function addScore(username, score) {
                 const { data, error } = await supabase
                     .from('Leaderboard')
@@ -62,6 +50,18 @@
                     console.error('Error adding score:', error);
                 } else {
                     console.log("Score added successfully!");
+                }
+            }
+
+            //Check that the username is unique.
+            const { data } = await supabase
+                .from('Leaderboard')
+                .select('username');
+        
+            for (let i = 0; i < data.length; i++) {
+                if (username == data[i].username) {
+                    alert("Username exists.");
+                    return;
                 }
             }
 
