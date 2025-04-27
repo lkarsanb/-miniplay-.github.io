@@ -50,7 +50,7 @@ const wordList = [
         hint: "It is a musical instrument."
     },
     {
-        word: "xylophone",
+        word: "flute",
         hint: "It is a musical instrument."
     },
     {
@@ -62,7 +62,7 @@ const wordList = [
         hint: "It is a sport."
     },
     {
-        word: "volleyball",
+        word: "hockey",
         hint: "It is a sport."
     },
     {
@@ -86,7 +86,7 @@ const wordList = [
         hint: "It is a food."
     },
     {
-        word: "hamburger",
+        word: "fries",
         hint: "It is a food."
     },
     {
