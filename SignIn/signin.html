@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/SignIn/MPSignStyle.css"> 
+    
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!--Put logo onto browser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/favicon.ico">
+
+    <!--Sign in user using supabase authentication.-->
+    <script type="module">
+        import { supabase } from '/helper.js';
+
+        window.signIn = async function signIn() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const { error } = await supabase.auth.signInWithPassword({ email, password });
+            if (error) {
+                alert(error.message);
+                console.error("Error signing in:", error.message);
+            } else {
+                console.log("Sign in successful!");
+                window.location.href = "/SignIn/signedIn.html";
+            }
+        };
+    </script>
+
+    <body>
+
+    <!--Have logo on top of game page.-->
+    <div class="heading">
+        <!--When logo is clicked on, return to main page.-->
+        <a href="/index.html">
+            <h1>MiniPlay</h1>
+            <img src="/SignIn/Images/logo.png" alt="logo">
+        </a>
+    </div>
+
+    <div class="wrapper">
+        <h1>Log In</h1>
+        <form>
+            <input type="email" id="email" required placeholder="Email">
+            <input type="password" id="password" required placeholder="Password">
+        </form>
+
+        <button onclick="signIn()">Sign In</button>
+        <p2>Don't have an account? <a href="/SignIn/signup.html">Sign Up</a></p2> <!--Redirect user to sign up page.-->
+    </div>
+</body>
+
+</html>
