@@ -35,7 +35,9 @@ async function updateScore() {
                 }
             }
         }
-    }
+    } else {
+        userScore.innerHTML = String(score);
+      }
 }
 
 //Get initial user score from the database.
@@ -78,6 +80,7 @@ let computerChoice;
 let result;
 let userPoint = 0;
 let computerPoint = 0;
+let score = 0;
 
 //Display user's initial score.
 getScore();
@@ -167,6 +170,7 @@ function getResult() {
     alert("You win the game!")
     userPoint = 0;
     computerPoint = 0;
+    score++;
   
     userPointDisplay.innerHTML = String(userPoint);
     computerPointDisplay.innerHTML = String(computerPoint);
