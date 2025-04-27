@@ -16,7 +16,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import { supabase } from '/helper.js';
+import { supabase } from '../helper.js';
 
 //Get initial user score from the database.
 async function getScore() {
