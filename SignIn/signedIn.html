@@ -15,14 +15,14 @@
 
 
     <!--Link CSS file.-->
-    <link rel="stylesheet" href="/SignIn/style.css">
+    <link rel="stylesheet" href="./style.css">
 
     <!--Put logo onto browser tab-->
-    <link rel="shortcut icon" type="image/x-icon" href="/Images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
 
     <!--Use supabase authentication to sign the user out.-->
     <script type="module">
-        import { supabase } from '/helper.js';
+        import { supabase } from '../helper.js';
 
         window.signOut = async function signOut() {
             const { error } = await supabase.auth.signOut();
@@ -30,7 +30,7 @@
                 console.error("Error signing out:", error.message);
             } else {
                 console.log("Sign out successful!");
-                window.location.href = "/index.html";
+                window.location.href = "../index.html";
             }
         }
 
@@ -46,8 +46,8 @@
         <nav class="navbar">
             <div class="logo">
                 <!--When logo is clicked on, return to main page.-->
-                <a href="/SignIn/signedIn.html">
-                    <img src="/Images/logo.png" alt="logo">
+                <a href="./signedIn.html">
+                    <img src="../Images/logo.png" alt="logo">
                 </a>
             </div>
 
@@ -55,7 +55,7 @@
                 <ul>
                     <li>
                         <!--In place of #, add file location for leaderboard page code.-->
-                        <a href="/Leaderboard/leaderboard.html">Leaderboard</a>
+                        <a href="../Leaderboard/leaderboard.html">Leaderboard</a>
                     </li>
                 </ul>
             </div>
@@ -76,23 +76,23 @@
 
     <div class="container">
         <div class="gametile row">
-            <a href="/RPS/rps.html">
+            <a href="../RPS/rps.html">
                 <figure>
-                    <img src="/Images/rps_tile.jpeg" alt="Rock paper scissors game tile."/>
+                    <img src="../Images/rps_tile.jpeg" alt="Rock paper scissors game tile."/>
                     <figcaption>Rock Paper Scissors</figcaption>
                 </figure>
             </a>
 
-            <a href="/Hangman/hangman.html">
+            <a href="../Hangman/hangman.html">
                 <figure>
-                    <img src="/Images/hangman.jpg" alt="Hangman game tile."/>
+                    <img src="../Images/hangman.jpg" alt="Hangman game tile."/>
                     <figcaption>Hangman</figcaption>
                 </figure>
             </a>
             
-            <a href="/TicTacToe/tictactoe.html">
+            <a href="../TicTacToe/tictactoe.html">
                 <figure>
-                    <img src="/Images/ttt_tile.jpeg" alt="Tic-Tac-Toe game tile."/>
+                    <img src="../Images/ttt_tile.jpeg" alt="Tic-Tac-Toe game tile."/>
                     <figcaption>Tic-Tac-Toe</figcaption>
                 </figure>
             </a>
@@ -101,21 +101,21 @@
         <div class="gametile row">
             <a href="#">
                 <figure>
-                    <img src="/Images/TBA.jpeg" alt="To be announced tile."/>
+                    <img src="../Images/TBA.jpeg" alt="To be announced tile."/>
                     <figcaption>To be Announced</figcaption>
                 </figure>
             </a>
 
             <a href="#">
                 <figure>
-                    <img src="/Images/TBA.jpeg" alt="To be announced tile."/>
+                    <img src="../Images/TBA.jpeg" alt="To be announced tile."/>
                     <figcaption>To be Announced</figcaption>
                 </figure>
             </a>
 
             <a href="#">
                 <figure>
-                    <img src="/Images/TBA.jpeg" alt="To be announced tile."/>
+                    <img src="../Images/TBA.jpeg" alt="To be announced tile."/>
                     <figcaption>To be Announced</figcaption>
                 </figure>
             </a>
