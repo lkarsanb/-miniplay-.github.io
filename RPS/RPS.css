@@ -1,0 +1,270 @@
+
+/* Page layout and background. */
+body {
+    background: #13072e;
+    padding: 0 10px;
+    font-family: 'Poppins';
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    min-height: 15vh;
+}
+
+
+.score b {
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+
+
+/* Add name of game above box. */
+h1 {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Create a box for the game. */
+.game-body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;   /* Vertical location of box on page. */
+    padding-bottom: 50px;
+    background-image: url(/RPS/Images/RPS_background.png); 
+    background-size: contain;  
+    background-position:center; 
+    background-repeat: no-repeat; 
+    position: relative;
+
+}
+
+/* Formatting for choices and points. */
+.choices-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 80vw; 
+    margin: 0 auto; 
+}
+
+.points-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 80vw; 
+    margin: 0 auto; 
+}
+
+/* Begging stance and animation for player */
+.initial_player{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    bottom: 200px;
+    left: 38%;
+    width: 200px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+}
+
+
+.initial_player img{
+    visibility: hidden;
+    transform: rotate(80deg);
+    animation: player 1s infinite;
+    animation-iteration-count: 2.8;
+}
+
+
+@keyframes player{
+    50% {transform: rotate(5deg);}  
+}
+
+/* Player stance and animation for scissors */
+.scissor_player{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    bottom: 100px;
+    left: 41%;
+    width: 300px;
+    height: 250px;
+    transform: translate(-50%, -50%);  
+}
+
+.scissor_player img{
+    visibility: hidden;
+    transform: rotate(80deg);
+}
+
+/* Player stance and animation for paper */
+.paper_player{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    bottom: 150px;
+    left: 41%;
+    width: 250px;
+    height: 200px;
+    transform: translate(-50%, -50%);  
+}
+
+.paper_player img{
+    visibility: hidden;
+    transform: rotate(80deg);
+}
+
+/* Computer beginning stance and animation for player */
+.initial_computer{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    bottom: 200px;
+    left: 62%;
+    width: 200px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+}
+
+.initial_computer img{
+    visibility: hidden;
+    transform: rotate(-80deg);
+    animation: computer 1s infinite;
+    animation-iteration-count: 2.8;
+}
+
+
+@keyframes computer{
+    50% {transform: rotate(5deg);}
+}
+
+/* Computer stance and animation for scissors */
+.scissor_computer{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    bottom: 100px;
+    left: 59%;
+    width: 300px;
+    height: 250px;
+    transform: translate(-50%, -50%);  
+}
+
+.scissor_computer img{
+    visibility: hidden;
+    transform: rotate(-80deg);
+}
+
+/* Computer stance and animation for paper */
+.paper_computer{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    bottom: 150px;
+    left: 59%;
+    width: 250px;
+    height: 200px;
+    transform: translate(-50%, -50%);  
+}
+
+.paper_computer img{
+    visibility: hidden;
+    transform: rotate(-80deg);
+}
+
+/*Button formating*/
+.button-container {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 50px;
+}
+
+.choice-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.choice-btn img {
+    width: 115px;
+    height: 115px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    transition: transform 0.2s;
+}
+
+/* Hover effect for buttons */
+.choice-btn img:hover {
+    transform: scale(1.1);
+    border-color:#b117a1;
+}
+
+/*Display of choices and points*/
+.user-choice {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.computer-choice {
+    position: absolute;
+    top: 50px;
+    right: 300px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.user-points {
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.computer-points {
+    position: absolute;
+    top: 100px;
+    right: 300px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 10;
+}
