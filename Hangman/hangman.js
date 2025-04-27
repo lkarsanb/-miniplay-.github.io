@@ -1,4 +1,4 @@
-import { supabase } from '/helper.js';
+import { supabase } from '../helper.js';
 
 //Update user score in database and in right corner.
 async function updateScore() {
@@ -82,7 +82,7 @@ getScore()
 const resetGame = () => {
     correctLetters = [];
     wrongGuessCount = 0;
-    hangmanImage.src = `Hangman/Images/stand.png`
+    hangmanImage.src = `Images/stand.png`
     guessedText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
     keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
     wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("");
@@ -102,7 +102,7 @@ const getRandomWord = () => {
 const gameOver = (isVictory) => {
     setTimeout(() => {
         const modalText = isVictory ? `You found the word: ` : `The correct word was: `;
-        gameModel.querySelector("img").src = `Hangman/Images/${isVictory ? 'win.jpg' : 'lost.png'}`;
+        gameModel.querySelector("img").src = `Images/${isVictory ? 'win.jpg' : 'lost.png'}`;
         gameModel.querySelector("h4").innerText = `${isVictory ? 'Congrats!' : 'Nice Try!'}`;
         gameModel.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
         gameModel.classList.add("show");
@@ -125,7 +125,7 @@ const initGame = (button, clickedLetter) => {
     // Otherwise, if incorrect letter is guessed, increment incorrect answer count and update hangman image.
     else {
         wrongGuessCount++;
-        hangmanImage.src = `Hangman/Images/${wrongGuessCount}.png`
+        hangmanImage.src = `Images/${wrongGuessCount}.png`
     }
 
     button.disabled = true;
