@@ -43,7 +43,7 @@ h1 {
     align-items: center;
     min-height: 70vh;   /* Vertical location of box on page. */
     padding-bottom: 50px;
-    background-image: url(/RPS/Images/RPS_background.png); 
+    background-image: url(Images/RPS_background.png); 
     background-size: contain;  
     background-position:center; 
     background-repeat: no-repeat; 
