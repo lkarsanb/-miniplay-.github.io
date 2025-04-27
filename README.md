@@ -20,7 +20,11 @@ Backend - PHP, Supabase (PostgreSQL database), XAMPP (local test environment wit
 Tools - Visual Studio Code (IDE), Supabase (database management), XAMPP Control Panel (local server testing), Git (version control)
 
 ## How to Run the Project
-Option 1 (with Log in feature):
+Option 1 (Inspecting Code):
+1. Go to - https://github.com/lkarsanb/-miniplay-.github.io/tree/main
+2. ...
+   
+Option 1 (UI Run):
 1. Publish page
 2. Go to - https://lkarsanb.github.io/-miniplay-.github.io/index.html
 
