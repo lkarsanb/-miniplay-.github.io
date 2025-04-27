@@ -53,18 +53,6 @@
                 }
             }
 
-            //Check that the username is unique.
-            const { data } = await supabase
-                .from('Leaderboard')
-                .select('username');
-        
-            for (let i = 0; i < data.length; i++) {
-                if (username == data[i].username) {
-                    alert("Username exists.");
-                    return;
-                }
-            }
-
             // Validate password before attempting sign-up
             if (
                 password.length < 8 ||
@@ -90,6 +78,18 @@
                 }
 
                 return;
+            }
+
+            //Check that the username is unique.
+            const { data } = await supabase
+                .from('Leaderboard')
+                .select('username');
+        
+            for (let i = 0; i < data.length; i++) {
+                if (username == data[i].username) {
+                    alert("Username exists.");
+                    return;
+                }
             }
 
             const { error } = await supabase.auth.signUp({ email, password });
