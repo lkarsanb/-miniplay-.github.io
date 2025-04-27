@@ -153,27 +153,27 @@ function getResult() {
     result = 'its a draw!'
 
   }
-  if (computerChoice === 'rock' && userChoice === "paper") {
+  else if (computerChoice === 'rock' && userChoice === "paper") {
     result = 'you win!'
     userPoint++;
   }
-  if (computerChoice === 'rock' && userChoice === "scissors") {
+  else if (computerChoice === 'rock' && userChoice === "scissors") {
     result = 'you lost!'
     computerPoint++;
   }
-  if (computerChoice === 'paper' && userChoice === "scissors") {
+  else if (computerChoice === 'paper' && userChoice === "scissors") {
     result = 'you win!'
     userPoint++;
   }
-  if (computerChoice === 'paper' && userChoice === "rock") {
+  else if (computerChoice === 'paper' && userChoice === "rock") {
     result = 'you lose!'
     computerPoint++;
   }
-  if (computerChoice === 'scissors' && userChoice === "rock") {
+  else if (computerChoice === 'scissors' && userChoice === "rock") {
     result = 'you win!'
     userPoint++;
   }
-  if (computerChoice === 'scissors' && userChoice === "paper") {
+  else if (computerChoice === 'scissors' && userChoice === "paper") {
     result = 'you lose!'
     computerPoint++;
   }
