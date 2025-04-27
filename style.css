@@ -1,0 +1,184 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+body {
+    /* Fonts, font sizes, line-height, and bachground of main page. */
+
+    font-size: 16px;
+    line-height: 1.5;
+    background: #13072e;
+
+}
+
+a {
+    /* Color of font and remmoving underline from text. (white). */
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    /* Remove bullet point format. */
+    list-style: none;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Styling to align and place the elements in the navigation bar. */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 200;
+    width: 100%;
+}
+
+
+.main_menu ul {
+    display: flex;
+    justify-content: center;
+    padding: 0px 160px 0px 0px;
+}
+
+.navbar ul li a {
+    padding: 0px 50px 0px 150px;
+    display: block;
+    font-weight: 200;
+    transition: 0.5s
+}
+
+.navbar ul li a:hover {
+    color: #d9d9d9c3;
+}
+
+
+
+/*Appearance and location of sign in button. */
+.signin {
+    padding: 0px 10px 0px 100px;
+}
+
+.signin button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    height: 40px;
+    width: 100px;
+    padding: .85 10em;
+    background-color: white;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+/*Color to change sign in button when hovered over.*/
+button:hover {
+    background: #d9d9d9c3;
+}
+
+button a {
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+
+
+
+
+/* Game tile formatting. */
+figure img {
+    width: 430px;
+    height: 300px;
+}
+
+figure figcaption {
+    text-align: center;
+    font-size: 24px;
+}
+
+figure:hover {
+    border: 2px dotted gray;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.gametile {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 50px;
+}
+
+
+/* Container class to create margins and borders for whole page. */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/* Hamburger Menu. */
+.hamburger-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.hamburger-button .hamburger-line {
+    width: 30px;
+    height: 3px;
+    background: #d9d9d9c3;
+    margin: 6px 0;
+}
+
+.collapse-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100%;
+    z-index: 100;
+    background-color: blue;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+}
+
+.collapse-menu.active {
+    right: 0;
+}
+
+.collapse-menu ul {
+    margin-top: 100px;
+    padding-right: 10px;
+}
+
+.collapse-menu ul li {
+    margin: 10px 0;
+    padding-right: 10px;
+}
+
+.collapse-menu ul li a {
+    font-size: 20px;
+    transition: 0.3s;
+}
