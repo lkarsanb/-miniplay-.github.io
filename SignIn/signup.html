@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/SignIn/MPSignStyle.css"> 
+    <link rel="stylesheet" href="./SignIn/MPSignStyle.css"> 
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
  
     <!--Put logo onto browser tab-->
-    <link rel="shortcut icon" type="image/x-icon" href="/Images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
 
     <!--Allow user to signup using supabase. Incudes logic to make sure that the password is good.-->
     <script type="module">
-        import { supabase } from '/helper.js';
+        import { supabase } from '../helper.js';
 
         // Attach sign-up and sign-in to the buttons using form inputs
         window.signUp = async function signUp() {
@@ -69,7 +69,7 @@
             } else {
                 console.log("Sign up successful!");
                 addScore(username, 0);
-                window.location.href = "/SignIn/signedIn.html";
+                window.location.href = "./signedIn.html";
             }
         };
         
@@ -85,7 +85,7 @@
         <!--When logo is clicked on, return to main page.-->
         <a href="/index.html">
             <h1>MiniPlay</h1>
-            <img src="/SignIn/Images/logo.png" alt="logo">
+            <img src="./Images/logo.png" alt="logo">
         </a>
     </div>
 
@@ -97,7 +97,7 @@
             <input type="password" id="password" required placeholder="Password">
         </form>
         <button onclick="signUp()">Sign Up</button>
-        <p2>Already have an account? <a href="/SignIn/signin.html">Log In</a></p2> <!--Redirect user to sign in page.-->
+        <p2>Already have an account? <a href="./signin.html">Log In</a></p2> <!--Redirect user to sign in page.-->
     </div>
 </body>
 
