@@ -5,7 +5,7 @@
 	content="width=device-width, initial-scale=1.0">
 
 <!-- Link to style page -->
-<link rel="stylesheet" href="/RPS/rps.css"/>
+<link rel="stylesheet" href="./rps.css"/>
 
 <!--Fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,11 +13,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
  
 <!--Put logo onto browser tab-->
-<link rel="shortcut icon" type="image/x-icon" href="/Images/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
 
 <!--Redirect user to correct main page based on if they are signed in or not.-->
 <script type="module">
-    import { supabase } from '/helper.js';
+    import { supabase } from '../helper.js';
 
     // Function to check the current user and update UI
     window.checkUserStatus = async function checkUserStatus() {
@@ -26,10 +26,10 @@
 
         if (user) {
             console.log("User is signed in:", user);
-            window.location.href = "/SignIn/signedIn.html";
+            window.location.href = "../SignIn/signedIn.html";
         } else {
             console.log("No user signed in.");
-            window.location.href = "/index.html";
+            window.location.href = "../index.html";
         }
     };
 </script>
@@ -40,7 +40,7 @@
 	
     <!--When logo is clicked on, return to correct page.-->
     <a onclick="checkUserStatus()">
-        <img src="/Images/logo.png" alt="logo">
+        <img src="../Images/logo.png" alt="logo">
     </a>
 
     <!--User Score-->
@@ -67,46 +67,46 @@
 
         <!-- Start position of player and computer -->
         <div id="player_animate" class="initial_player">
-            <img src="/RPS/Images/start postion 2.png" alt="user_postion" style="width:75%">
+            <img src="./Images/start postion 2.png" alt="user_postion" style="width:75%">
         </div>
 
         <div id="computer_animate" class="initial_computer">
-            <img src="/RPS/Images/start postion.png" alt="user_postion" style="width:75%">
+            <img src="./Images/start postion.png" alt="user_postion" style="width:75%">
         </div>
 
         <!-- End position of player and computer -->
         <div class="scissor_computer">
-            <img src="/RPS/Images/scissors end.png" alt="comp_scissor" style="width: 75%">
+            <img src="./Images/scissors end.png" alt="comp_scissor" style="width: 75%">
         </div>
 
         <div class="scissor_player">
-            <img src="/RPS/Images/scissors end 2.png" alt="player_scissor" style="width: 75%">
+            <img src="./Images/scissors end 2.png" alt="player_scissor" style="width: 75%">
         </div>
 
         <div class="paper_computer">
-            <img src="/RPS/Images/paper end.png" alt="comp_paper" style="width: 75%">
+            <img src="./Images/paper end.png" alt="comp_paper" style="width: 75%">
         </div>
 
         <div class="paper_player">
-            <img src="/RPS/Images/paper end 2.png" alt="player_paper" style="width: 75%">
+            <img src="./Images/paper end 2.png" alt="player_paper" style="width: 75%">
         </div>
 
 
         <!--Buttons for user choice-->
         <div class="button-container">
             <button class="choice-btn" id="rock" onclick="generateComputerChoice(); triggerAnimation('rock')">
-                <img src="/RPS/Images/rock icon.jpg" alt="Rock">
+                <img src="./Images/rock icon.jpg" alt="Rock">
             </button>
             <button class="choice-btn" id="paper" onclick="generateComputerChoice(); triggerAnimation('paper')">
-                <img src="/RPS/Images/paper icon.jpg" alt="Paper">
+                <img src="./Images/paper icon.jpg" alt="Paper">
             </button>
             <button class="choice-btn" id="scissors" onclick="generateComputerChoice(); triggerAnimation('scissors')">
-                <img src="/RPS/Images/scissor icon.jpg" alt="Scissors">
+                <img src="./Images/scissor icon.jpg" alt="Scissors">
             </button>
         </div>
     </div>
 
-	<script type="module" src="/RPS/rps.js" charset="utf-8"></script>
+	<script type="module" src="./rps.js" charset="utf-8"></script>
 
 </body>
 
