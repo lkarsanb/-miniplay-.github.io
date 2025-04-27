@@ -83,6 +83,7 @@
             if (error) {
                 console.error("Error signing up:", error.message);
                 alert(error.message);
+                location.reload();
             } else {
                 console.log("Sign up successful!");
                 addScore(username, 0);
