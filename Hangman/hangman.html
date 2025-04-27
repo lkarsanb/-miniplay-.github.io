@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!--Link CSS file.-->
-    <link rel="stylesheet" href="/Hangman/hangman.css">
+    <link rel="stylesheet" href="Hangman/hangman.css">
 
     <!--Link JavaScript files.-->
-    <script type="module" src="/Hangman/hangman.js" defer></script>
-    <script src="/Hangman/words.js"></script> <!--Contains list of possible words to guess.-->
+    <script type="module" src="Hangman/hangman.js" defer></script>
+    <script src="Hangman/words.js"></script> <!--Contains list of possible words to guess.-->
 
     <!--Put logo onto browser tab-->
     <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
@@ -31,10 +31,10 @@
 
             if (user) {
                 console.log("User is signed in:", user);
-                window.location.href = "/SignIn/signedIn.html";
+                window.location.href = "SignIn/signedIn.html";
             } else {
                 console.log("No user signed in.");
-                window.location.href = "/index.html";
+                window.location.href = "index.html";
             }
         };
 
@@ -47,7 +47,7 @@
     <div class="heading">
         <!--When logo is clicked on, return to main page.-->
         <a onclick="checkUserStatus()">
-            <img src="/Images/logo.png" alt="logo">
+            <img src="Images/logo.png" alt="logo">
         </a>
 
         <!--User Score-->
@@ -65,7 +65,7 @@
     <div class="game-body">
         <div class="game-model">
             <div class="content">
-                <img src="/Hangman/Images/lost.png" alt="Nice try image">
+                <img src="Hangman/Images/lost.png" alt="Nice try image">
                 <h4>Game Over!</h4>
                 <p>The correct word was: <b></b></p>
                 <button class="play-again">Play Again</button>
@@ -77,7 +77,7 @@
 
         <div class="container">
             <div class="stand">
-                <img src="/Hangman/Images/stand.png" alt="hangman stand image">
+                <img src="Hangman/Images/stand.png" alt="hangman stand image">
             </div>
 
             <!--Blanks for the characters of the word.-->
