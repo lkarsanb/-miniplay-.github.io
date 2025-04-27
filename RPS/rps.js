@@ -188,14 +188,14 @@ function getResult() {
     alert("You win the game!")
     userPoint = 0;
     computerPoint = 0;
-    //score++;
+    score++;
   
     userPointDisplay.innerHTML = String(userPoint);
     computerPointDisplay.innerHTML = String(computerPoint);
 
     //Since the user won, update their score in database.
     updateScore(); 
-    getScore();
+    //getScore();
     
     }, 3000); // Show after 3 seconds
   }
@@ -207,7 +207,7 @@ function getResult() {
     computerPoint = 0;
     userPointDisplay.innerHTML = String(userPoint);
     computerPointDisplay.innerHTML = String(computerPoint);
-    //userScore.innerHTML = String(score);
+    userScore.innerHTML = String(score);
     }, 3000); // Show after 3 seconds
   }
 }
