@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniPlay</title>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!--Link CSS file.-->
+    <link rel="stylesheet" href="./leaderboard.css">
+
+    <!--Link JS file.-->
+    <script type="module" src="./leaderboard.js"></script>
+
+    <!--Put logo onto browser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
+
+    <!--Redirect user to correct main page based on if they are signed in or not.-->
+    <script type="module">
+        import { supabase } from '../helper.js';
+        import { displayLeaderboard } from './leaderboard.js';
+
+        // Function to check the current user and update UI
+        window.checkUserStatus = async function checkUserStatus() {
+            const { data: { user } } = await supabase.auth.getUser();
+            const statusText = document.getElementById("userStatus");
+
+            if (user) {
+                console.log("User is signed in:", user);
+                window.location.href = "../SignIn/signedIn.html";
+            } else {
+                console.log("No user signed in.");
+                window.location.href = "../index.html";
+            }
+        };
+        displayLeaderboard();
+
+    </script>
+    
+</head>
+
+<body>
+
+    <div class="heading">
+        <!--When logo is clicked on, return to main page.-->
+        <a onclick="checkUserStatus()">
+            <img src="../Images/logo.png" alt="logo">
+        </a>
+
+        <h2 class="score">
+            Score:
+            <b><span id = "user-score"></b>
+        </h2>
+    </div>
+
+
+    <h1>Leaderboard</h1>
+
+    <div class="wrapper">
+        <div class="lboard-section">
+
+
+        <div class="lboard-wrap">
+            <table id="Leaderboard"></table> <!-- Target element for the leaderboard -->
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
