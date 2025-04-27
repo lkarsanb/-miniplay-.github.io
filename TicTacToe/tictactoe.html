@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -16,17 +16,17 @@
 
 
     <!--Link CSS file.-->
-    <link rel="stylesheet" href="/TicTacToe/tictactoe.css">
+    <link rel="stylesheet" href="./tictactoe.css">
 
     <!--Link JavaScript file.-->
-    <script type="module" src="/TicTacToe/tictactoe.js" defer></script>
+    <script type="module" src="./tictactoe.js" defer></script>
 
     <!--Put logo onto browser tab-->
-    <link rel="shortcut icon" type="image/x-icon" href="/Images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
     
     <!--Redirect user to correct page if they are signed in or not.-->
     <script type="module">
-        import { supabase } from '/helper.js';
+        import { supabase } from '../helper.js';
 
         // Function to check the current user and update UI
         window.checkUserStatus = async function checkUserStatus() {
@@ -35,10 +35,10 @@
 
             if (user) {
                 console.log("User is signed in:", user);
-                window.location.href = "/SignIn/signedIn.html";
+                window.location.href = "../SignIn/signedIn.html";
             } else {
                 console.log("No user signed in.");
-                window.location.href = "/index.html";
+                window.location.href = "../index.html";
             }
         };
 
@@ -54,7 +54,7 @@
     <div class="heading">
         <!--When logo is clicked on, return to main page.-->
         <a onclick="checkUserStatus()">
-            <img src="/Images/logo.png" alt="logo">
+            <img src="../Images/logo.png" alt="logo">
         </a>
 
         <h2 class="score">
