@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/SignIn/MPSignStyle.css"> 
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+ 
+    <!--Put logo onto browser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/favicon.ico">
+
+    <!--Allow user to signup using supabase. Incudes logic to make sure that the password is good.-->
+    <script type="module">
+        import { supabase } from '/helper.js';
+
+        // Attach sign-up and sign-in to the buttons using form inputs
+        window.signUp = async function signUp() {
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            
+            async function addScore(username, score) {
+                const { data, error } = await supabase
+                    .from('Leaderboard')
+                    .insert([{ username, score }]);
+
+                if (error) {
+                    console.error('Error adding score:', error);
+                } else {
+                    console.log("Score added successfully!");
+                }
+            }
+
+            // Validate password before attempting sign-up
+            if (
+                password.length < 8 ||
+                !/[A-Z]/.test(password) ||
+                !/[a-z]/.test(password) ||
+                !/\d/.test(password) 
+            ) {
+                if (password.length < 8)
+                {
+                    alert("Password must be at least 8 characters long.");
+                }
+                else if (!/[A-Z]/.test(password))
+                {
+                    alert("Password must contain at least one uppercase leter.");
+                }
+                else if (!/[a-z]/.test(password))
+                {
+                    alert("Password must contain at least one lowercase leter.");
+                }
+                else if (!/\d/.test(password))
+                {
+                    alert("Password must contain at least one number.");
+                }
+
+                return;
+            }
+
+            const { error } = await supabase.auth.signUp({ email, password });
+            if (error) {
+                console.error("Error signing up:", error.message);
+                alert(error.message);
+            } else {
+                console.log("Sign up successful!");
+                addScore(username, 0);
+                window.location.href = "/SignIn/signedIn.html";
+            }
+        };
+        
+
+        
+    </script>
+
+    
+
+    <body>
+    <!--Have logo on top of game page.-->
+    <div class="heading">
+        <!--When logo is clicked on, return to main page.-->
+        <a href="/index.html">
+            <h1>MiniPlay</h1>
+            <img src="/SignIn/Images/logo.png" alt="logo">
+        </a>
+    </div>
+
+    <div class="wrapper">
+        <h1>Sign up</h1>
+        <form>
+            <input type="text" id="username" required placeholder="Username">
+            <input type="email" id="email" required placeholder="Email">
+            <input type="password" id="password" required placeholder="Password">
+        </form>
+        <button onclick="signUp()">Sign Up</button>
+        <p2>Already have an account? <a href="/SignIn/signin.html">Log In</a></p2> <!--Redirect user to sign in page.-->
+    </div>
+</body>
+
+</html>

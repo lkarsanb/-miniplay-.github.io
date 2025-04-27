@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniPlay</title>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!--Include font Awesome to create icons for various items.-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <!--Link CSS file.-->
+    <link rel="stylesheet" href="/SignIn/style.css">
+
+    <!--Put logo onto browser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/favicon.ico">
+
+    <!--Use supabase authentication to sign the user out.-->
+    <script type="module">
+        import { supabase } from '/helper.js';
+
+        window.signOut = async function signOut() {
+            const { error } = await supabase.auth.signOut();
+            if (error) {
+                console.error("Error signing out:", error.message);
+            } else {
+                console.log("Sign out successful!");
+                window.location.href = "/index.html";
+            }
+        }
+
+        
+    </script>
+
+
+<!--Same as index.html, but logic is for a signed in user.-->
+</head>
+<body>
+    <!--Top navigation bar containing website title (that leads back to hompage), leaderboard, account, feedback, and sign in-->
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <!--When logo is clicked on, return to main page.-->
+                <a href="/SignIn/signedIn.html">
+                    <img src="/Images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <div class="main_menu">
+                <ul>
+                    <li>
+                        <!--In place of #, add file location for leaderboard page code.-->
+                        <a href="/Leaderboard/leaderboard.html">Leaderboard</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="signout">
+                <button onclick="signOut()">Sign Out&rarr;</button>
+            </div> 
+            
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>
+            Welcome USERNAME!
+        </h1>
+    </div>
+
+
+    <div class="container">
+        <div class="gametile row">
+            <a href="/RPS/rps.html">
+                <figure>
+                    <img src="/Images/rps_tile.jpeg" alt="Rock paper scissors game tile."/>
+                    <figcaption>Rock Paper Scissors</figcaption>
+                </figure>
+            </a>
+
+            <a href="/Hangman/hangman.html">
+                <figure>
+                    <img src="/Images/hangman.jpg" alt="Hangman game tile."/>
+                    <figcaption>Hangman</figcaption>
+                </figure>
+            </a>
+            
+            <a href="/TicTacToe/tictactoe.html">
+                <figure>
+                    <img src="/Images/ttt_tile.jpeg" alt="Tic-Tac-Toe game tile."/>
+                    <figcaption>Tic-Tac-Toe</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="gametile row">
+            <a href="#">
+                <figure>
+                    <img src="/Images/TBA.jpeg" alt="To be announced tile."/>
+                    <figcaption>To be Announced</figcaption>
+                </figure>
+            </a>
+
+            <a href="#">
+                <figure>
+                    <img src="/Images/TBA.jpeg" alt="To be announced tile."/>
+                    <figcaption>To be Announced</figcaption>
+                </figure>
+            </a>
+
+            <a href="#">
+                <figure>
+                    <img src="/Images/TBA.jpeg" alt="To be announced tile."/>
+                    <figcaption>To be Announced</figcaption>
+                </figure>
+            </a>
+        </div> 
+
+
+    </div>
+
+
+</body>
+</html>
