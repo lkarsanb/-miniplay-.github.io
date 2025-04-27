@@ -107,7 +107,7 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
 
 // Function to generate computer choice
 window.generateComputerChoice = function generateComputerChoice() {
-  Math.floor(Math.random() * 3) + 1;
+  window.randomNumber = Math.floor(Math.random() * 3) + 1;
 
   if (randomNumber === 1) {
     computerChoice = 'rock';
