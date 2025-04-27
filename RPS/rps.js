@@ -106,7 +106,7 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
 }))
 
 // Function to generate computer choice
-function generateComputerChoice() {
+window.generateComputerChoice = function generateComputerChoice() {
   Math.floor(Math.random() * 3) + 1;
 
   if (randomNumber === 1) {
