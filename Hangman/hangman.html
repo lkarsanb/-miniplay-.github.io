@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniPlay</title>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!--Link CSS file.-->
+    <link rel="stylesheet" href="/Hangman/hangman.css">
+
+    <!--Link JavaScript files.-->
+    <script type="module" src="/Hangman/hangman.js" defer></script>
+    <script src="/Hangman/words.js"></script> <!--Contains list of possible words to guess.-->
+
+    <!--Put logo onto browser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
+
+    <!--Redirect user to correct main page based on if they are signed in or not.-->
+    <script type="module">
+        import { supabase } from '/helper.js';
+
+        // Function to check the current user and update UI
+        window.checkUserStatus = async function checkUserStatus() {
+            const { data: { user } } = await supabase.auth.getUser();
+            const statusText = document.getElementById("userStatus");
+
+            if (user) {
+                console.log("User is signed in:", user);
+                window.location.href = "/SignIn/signedIn.html";
+            } else {
+                console.log("No user signed in.");
+                window.location.href = "/index.html";
+            }
+        };
+
+        
+    </script>
+    
+</head>
+<body>
+    <!--Have logo and user's score on top of game page.-->
+    <div class="heading">
+        <!--When logo is clicked on, return to main page.-->
+        <a onclick="checkUserStatus()">
+            <img src="/Images/logo.png" alt="logo">
+        </a>
+
+        <!--User Score-->
+        <h2 class="score">
+            Score:
+            <b><span id = "user-score"></b>
+        </h2>
+    </div>
+
+    <!--Name of current game.-->
+    <h1>Hangman</h1>
+
+
+    <!--Inner box of the page that contains the game.-->
+    <div class="game-body">
+        <div class="game-model">
+            <div class="content">
+                <img src="/Hangman/Images/lost.png" alt="Nice try image">
+                <h4>Game Over!</h4>
+                <p>The correct word was: <b></b></p>
+                <button class="play-again">Play Again</button>
+
+                <!--Return to either signed in page or regular main page.-->
+                <button onclick="checkUserStatus()">Return Home</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="stand">
+                <img src="/Hangman/Images/stand.png" alt="hangman stand image">
+            </div>
+
+            <!--Blanks for the characters of the word.-->
+            <div class="game-box">
+                <ul class="word-display"></ul>
+
+                <!--Hints-->
+                <h4 class="hint-text">
+                    Hint:
+                    <b></b>
+                </h4>
+
+                <!--Number of guesses-->
+                <h4 class="guesses-text">
+                    Incorrect guesses:
+                    <b></b>
+                </h4>
+
+                <!--Keyboard users can select letters from.-->
+                <div class="keyboard"></div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
