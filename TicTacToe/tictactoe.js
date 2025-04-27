@@ -1,4 +1,4 @@
-import { supabase } from '/helper.js';
+import { supabase } from '../helper.js';
 
 //Update user score in database and in right corner.
 async function updateScore() {
