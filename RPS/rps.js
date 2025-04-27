@@ -195,6 +195,8 @@ function getResult() {
 
     //Since the user won, update their score in database.
     updateScore(); 
+    getScore();
+    
     }, 3000); // Show after 3 seconds
   }
   
