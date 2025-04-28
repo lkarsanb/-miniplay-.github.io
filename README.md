@@ -41,7 +41,7 @@ Option 2 (Developer testing):
 7. Open http://localhost:8000/
 
 ## Contributors
-Jessica Webb
+Jessica Webb - Initial Design Concepts, Front-End Developer, Game Programmer/Developer
 
-Lea Karsanbhai
+Lea Karsanbhai - Technical Documentation, Project Manager, Game Programmer/Developer
 
