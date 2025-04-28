@@ -22,7 +22,8 @@ Tools - Visual Studio Code (IDE), Supabase (database management), XAMPP Control 
 ## How to Run the Project
 Option 1 (Inspecting Code):
 1. Go to - https://github.com/lkarsanb/-miniplay-.github.io/tree/main
-2. ...
+2. Download Zip under Code
+3. Unzip and Open the code folder in your preferred IDE
    
 Option 1 (UI Run):
 1. Publish page
