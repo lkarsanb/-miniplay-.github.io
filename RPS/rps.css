@@ -336,7 +336,7 @@ h1 {
     .initial_computer,
     .scissor_computer,
     .paper_computer {
-        bottom: 210px;
+        bottom: 250px;
         width: 180px;
         height: 140px;
         
@@ -417,7 +417,7 @@ h1 {
     .initial_computer,
     .scissor_computer,
     .paper_computer {
-        bottom: 145px;
+        bottom: 185px;
         width: 125px;
         height: 95px;
         
