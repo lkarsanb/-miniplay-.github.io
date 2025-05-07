@@ -291,7 +291,7 @@ h1 {
 }
 
 /* Media query for larger screens */
-@media (max-width: 1200px){
+@media (max-width: 1250px){
     .user-choice,
     .computer-choice,
     .user-points,
@@ -316,6 +316,17 @@ h1 {
     .computer-points {
         right: 75px;
         top: 200px;
+    }
+
+    .button-container {
+        bottom: 70px; 
+        gap: 40px;
+    }
+
+    .choice-btn img {
+        width: 100px;
+        height: 100px;
+        border-radius: 15px;
     }
 
     .initial_player,
@@ -344,7 +355,7 @@ h1 {
 }
 
 /* Media query for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 808px) {
     h1 {
         font-size: 40px; 
     }
