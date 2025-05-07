@@ -292,6 +292,12 @@ h1 {
 
 /* Media query for larger screens */
 @media (max-width: 1250px){
+    .game-body {
+        min-height: 60vh; 
+        padding-bottom: 20px;
+        background-size: cover;
+    }
+    
     .user-choice,
     .computer-choice,
     .user-points,
