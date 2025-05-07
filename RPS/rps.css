@@ -291,12 +291,7 @@ h1 {
 }
 
 /* Media query for larger screens */
-@media (max-width: 1250px){
-    .game-body {
-        min-height: 60vh; 
-        padding-bottom: 20px;
-        background-size: cover;
-    }
+@media (max-width: 1300px){
     
     .user-choice,
     .computer-choice,
@@ -361,7 +356,7 @@ h1 {
 }
 
 /* Media query for smaller screens */
-@media (max-width: 850px) {
+@media (max-width: 950px) {
     h1 {
         font-size: 40px; 
     }
