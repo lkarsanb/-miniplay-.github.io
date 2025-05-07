@@ -303,23 +303,23 @@ h1 {
 
     .user-choice {
         left: 75px;
-        top: 150px
+        top: 175px
     }
     .computer-choice {
         right: 75px;
-        top: 150px;
+        top: 175px;
     }
     .user-points {
         left: 75px;
-        top: 200px;
+        top: 225px;
     }
     .computer-points {
         right: 75px;
-        top: 200px;
+        top: 225px;
     }
 
     .button-container {
-        bottom: 70px; 
+        bottom: 90px; 
         gap: 40px;
     }
 
@@ -355,7 +355,7 @@ h1 {
 }
 
 /* Media query for smaller screens */
-@media (max-width: 808px) {
+@media (max-width: 850px) {
     h1 {
         font-size: 40px; 
     }
