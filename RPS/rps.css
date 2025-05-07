@@ -320,7 +320,7 @@ h1 {
     }
 
     .button-container {
-        bottom: 90px; 
+        bottom: 120px; 
         gap: 40px;
     }
 
@@ -336,7 +336,7 @@ h1 {
     .initial_computer,
     .scissor_computer,
     .paper_computer {
-        bottom: 180px;
+        bottom: 210px;
         width: 180px;
         height: 140px;
         
