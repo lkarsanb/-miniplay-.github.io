@@ -16,6 +16,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+
 /* Page layout and background. */
 body {
     background: #13072e;
@@ -33,10 +34,9 @@ body {
     min-height: 15vh;
 }
 
-
 .score b {
     padding-top: 0px;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 15px;
 }
 
@@ -52,19 +52,19 @@ h1 {
     font-weight: 600;
 }
 
-/* Create a box for the game. */
 .game-body {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;   /* Vertical location of box on page. */
+    min-height: 80vh;   /* Vertical location of box on page. */
     padding-bottom: 50px;
     background-image: url(Images/RPS_background.png); 
     background-size: contain;  
     background-position:center; 
     background-repeat: no-repeat; 
-    position: relative;
+    width: 100%;
+    height: auto;
 
 }
 
@@ -72,7 +72,7 @@ h1 {
 .choices-container {
     display: flex;
     justify-content: space-between; 
-    align-items: center; 
+    align-items: center;
     width: 80vw; 
     margin: 0 auto; 
 }
@@ -249,39 +249,178 @@ h1 {
 .user-choice {
     position: absolute;
     top: 50px;
-    left: 375px;
+    left: 300px;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
     z-index: 10;
+    text-align: left;
 }
 
 .computer-choice {
     position: absolute;
     top: 50px;
-    right: 375px;
+    right: 300px;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
     z-index: 10;
+    text-align: right;
 }
 
 .user-points {
     position: absolute;
     top: 100px;
-    left: 375px;
+    left: 300px;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
     z-index: 10;
+    text-align: left;
 }
 
 .computer-points {
     position: absolute;
     top: 100px;
-    right: 375px;
+    right: 300px;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
     z-index: 10;
+    text-align: right;
 }
+
+/* Media query for larger screens */
+@media (max-width: 1200px){
+    .user-choice,
+    .computer-choice,
+    .user-points,
+    .computer-points {
+        font-size: 1rem;
+       /* left: 20px;
+        right: 20px;*/
+    }
+
+    .user-choice {
+        left: 75px;
+        top: 150px
+    }
+    .computer-choice {
+        right: 75px;
+        top: 150px;
+    }
+    .user-points {
+        left: 75px;
+        top: 200px;
+    }
+    .computer-points {
+        right: 75px;
+        top: 200px;
+    }
+
+    .initial_player,
+    .scissor_player,
+    .paper_player,
+    .initial_computer,
+    .scissor_computer,
+    .paper_computer {
+        bottom: 180px;
+        width: 180px;
+        height: 140px;
+        
+    }
+
+    .initial_player,
+    .scissor_player,
+    .paper_player {
+        left: 35%;
+    }
+
+    .initial_computer,
+    .scissor_computer,
+    .paper_computer {
+        left: 65%;
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px; 
+    }
+
+    .game-body {
+        min-height: 60vh; 
+        padding-bottom: 20px;
+        background-size: cover;
+    }
+
+
+    .user-choice,
+    .computer-choice,
+    .user-points,
+    .computer-points {
+        font-size: .8rem;
+       /* left: 20px;
+        right: 20px;*/
+    }
+
+    .user-choice {
+        left: 75px;
+        top: 50px
+    }
+    .computer-choice {
+        right: 75px;
+        top: 50px;
+    }
+    .user-points {
+        left: 75px;
+        top: 100px;
+    }
+    .computer-points {
+        right: 75px;
+        top: 100px;
+    }
+
+    .button-container {
+        bottom: 60px; 
+        gap: 30px;
+    }
+
+    .choice-btn img {
+        width: 80px;
+        height: 80px;
+        border-radius: 15px;
+    }
+
+
+    .score {
+        min-height: 10vh;
+        font-size: 0.9rem;
+    }
+
+    .initial_player,
+    .scissor_player,
+    .paper_player,
+    .initial_computer,
+    .scissor_computer,
+    .paper_computer {
+        bottom: 145px;
+        width: 125px;
+        height: 95px;
+        
+    }
+
+    .initial_player,
+    .scissor_player,
+    .paper_player {
+        left: 35%;
+    }
+
+    .initial_computer,
+    .scissor_computer,
+    .paper_computer {
+        left: 65%;
+    }
+}
+
